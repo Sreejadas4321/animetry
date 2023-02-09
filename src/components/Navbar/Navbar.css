@@ -1,0 +1,110 @@
+
+:root{
+    --red-color: red;
+}
+
+*{
+    font-family:  'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+   /* transition: all .2s linear; */
+}
+html{
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    font-size: 62.5%;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 1rem 8%;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+    background: black;
+}
+div.logo{
+    color: red;
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+.menu a{
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    color: white;
+    font-size: 1.7rem;
+}
+.menu a:hover {
+    color:white ;
+    background: var(--red-color);
+}
+
+.nav-icons i{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    color: white;
+    font-size: 1.7rem;
+    border-radius: 50%;
+    background: var(--red-color);
+}
+.nav-icons i:hover{
+    color: var(--red-color);
+    background: white;
+    transform: rotate(360deg);
+}
+.bars-icon{
+display: none;
+}
+
+@media(max-width : 991px){
+   html{
+    font-size: 55%;
+   } 
+
+   header{
+    padding: 1rem 2rem;
+   }
+}
+@media(max-width : 758px){
+    header .bars-icon{
+        display: inline-block;
+    }
+    header .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: black;
+        border-top: .1rem solid black;
+        border-bottom: .1rem solid black;
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    header .menu.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    header .menu a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background: var(--red-color);
+    }
+}
+@media(max-width : 468px){
+   html{
+   font-size: 50%;
+   }
+}
+
